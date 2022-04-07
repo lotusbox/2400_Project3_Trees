@@ -8,9 +8,17 @@ public class DriverBT
 		
 		System.out.println("(binaryTree) post-order: ");
 		aTree.postorderTraverse();
+		System.out.println("\n(binaryTree) in-order: ");
+		aTree.inorderTraverse();
+		System.out.println("\n(binaryTree) pre-order: ");
+		aTree.preorderTraverse();
 		
-		System.out.println("(binaryNode) post-order: ");
+		System.out.println("\n\n(binaryNode) post-order: ");
 		aTree.postorderTraverse_callBinaryNodeMethod();
+		System.out.println("\n(binaryNode) in-order: ");
+		aTree.inorderTraverse_callBinaryNodeMethod();
+		System.out.println("\n(binaryNode) pre-order: ");
+		aTree.preorderTraverse_callBinaryNodeMethod();
 		
 		System.out.println();
 		
@@ -31,9 +39,17 @@ public class DriverBT
 		
 		System.out.println("(binaryTree) post-order: ");
 		aTree2.postorderTraverse();
+		System.out.println("\n(binaryTree) in-order: ");
+		aTree2.inorderTraverse();
+		System.out.println("\n(binaryTree) pre-order: ");
+		aTree2.preorderTraverse();
 		
-		System.out.println("(binaryNode) post-order: ");
+		System.out.println("\n\n(binaryNode) post-order: ");
 		aTree2.postorderTraverse_callBinaryNodeMethod();
+		System.out.println("\n(binaryNode) in-order: ");
+		aTree2.inorderTraverse_callBinaryNodeMethod();
+		System.out.println("\n(binaryNode) pre-order: ");
+		aTree2.preorderTraverse_callBinaryNodeMethod();
 		
 		System.out.println();
 		

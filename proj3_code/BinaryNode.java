@@ -1,3 +1,5 @@
+import javax.swing.RootPaneContainer;
+
 class BinaryNode<T>
 {
    private T             data;
@@ -104,9 +106,14 @@ class BinaryNode<T>
     * Part of Task 1 */
    /** A Recursive Method in the BinaryNode Class   
     * prints (using post-order traversal) all nodes of the subtree rooted at "this" node */
-   public void postorderTraverse_binaryNodeMethod()
-   {
-   }
+    public void postorderTraverse_binaryNodeMethod()
+    {
+       if(this.hasLeftChild())
+          this.leftChild.postorderTraverse_binaryNodeMethod();
+       if(this.hasRightChild())
+          this.rightChild.postorderTraverse_binaryNodeMethod();
+       System.out.print(this.data + " ");
+    }
 
    public int getHeight(){
       return getHeight_binaryNodeMethod(this);
@@ -117,12 +124,13 @@ class BinaryNode<T>
    /** A Recursive Method in the BinaryNode Class   
     * Computes the height of the subtree rooted at "this" node.
    @return  The height of the subtree rooted at "this" node. */
-   private int getHeight_binaryNodeMethod(BinaryNode<T> node)
+   public int getHeight_binaryNodeMethod(BinaryNode<T> node)
    {  
       int height = 0;
 
-      if (node != null)
-         height = Math.max(getHeight(node.getLeftChild()), getHeight(node.getRightChild()));
+      if (node != null){
+         height = 1 + Math.max(getHeight_binaryNodeMethod(node.getLeftChild()), getHeight_binaryNodeMethod(node.getRightChild()));
+      }
 
 	   return height;
    } // end getHeight
@@ -142,4 +150,30 @@ class BinaryNode<T>
 	  return 1 + leftNumber + rightNumber;
 	} // end getNumberOfNodes
 	
+
+   /** ---------------------------------Extra Implementations: inOrder and preOrder BinaryNode-----------------------------------
+
+   /** A Recursive Method in the BinaryNode Class   
+    * prints (using in-order traversal) all nodes of the subtree rooted at "this" node */
+    public void inorderTraverse_binaryNodeMethod()
+    {
+       if(this.hasLeftChild())
+          this.leftChild.inorderTraverse_binaryNodeMethod();
+       System.out.print(this.data + " ");
+       if(this.hasRightChild())
+          this.rightChild.inorderTraverse_binaryNodeMethod();
+       
+    }
+
+    /** A Recursive Method in the BinaryNode Class   
+    * prints (using pre-order traversal) all nodes of the subtree rooted at "this" node */
+    public void preorderTraverse_binaryNodeMethod()
+    {
+      System.out.print(this.data + " "); 
+      if(this.hasLeftChild())
+          this.leftChild.preorderTraverse_binaryNodeMethod();
+      if(this.hasRightChild())
+          this.rightChild.preorderTraverse_binaryNodeMethod();
+       
+    }
 } // end BinaryNode
